@@ -4,8 +4,6 @@
 テーマ（ブロック）
 
 ## 概要
-制作者
-
 Rinifisu (https://twitter.com/rinifisu)
 
 制作前に定めていた目標
