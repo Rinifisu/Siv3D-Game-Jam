@@ -40,14 +40,16 @@ public:
 class SparkManager
 {
 private:
-	Array<Spark> m_Spark;
+	Array<Spark> m_Spark; //火花配列
 
 public:
+	//火花を生成
 	void Add(const Vec2 & position)
 	{
-		m_Spark.emplace_back(position);
+		for (int i = 0; i < 10; ++i) m_Spark.emplace_back(position);
 	}
 
+	//更新
 	void Update()
 	{
 		Array<Spark>::iterator it = m_Spark.begin();
@@ -55,6 +57,7 @@ public:
 
 		while (it != it_End)
 		{
+			//消去フラグが立っていたら消去する
 			if (it->isDestroy())
 			{
 				it = m_Spark.erase(it);
@@ -63,9 +66,11 @@ public:
 			else ++it;
 		}
 
+		//全てを更新
 		for (auto & i : m_Spark) i.Update();
 	}
 
+	//描画
 	void Draw()
 	{
 		for (auto & i : m_Spark) i.Draw();
@@ -141,6 +146,7 @@ public:
 		return Vec2(Max(m_Position.x, Window::Width() - m_Position.x), m_Position.y);
 	}
 
+	//サイズ
 	Vec2 size() const
 	{
 		return m_Size;
@@ -311,21 +317,25 @@ public:
 		m_Texture.draw(m_Position);
 	}
 
+	//画像
 	TextureRegion texture() const
 	{
 		return m_Texture;
 	}
 
+	//座標
 	Vec2 position() const
 	{
 		return m_Position;
 	}
 
+	//動作中であるか
 	bool isActive() const
 	{
 		return m_Active;
 	}
 
+	//ゲームオーバー判定
 	bool isGameOver() const
 	{
 		return m_GameOver;
@@ -425,9 +435,8 @@ void Main()
 				//ゲームオーバーなら
 				if (moveBlock.isGameOver())
 				{
-					//接触部から火花を10個生成
-					for (int i = 0; i < 10; ++i)
-						spark.Add(Vec2(Random(moveBlock.position().x, bar.target().x), bar.target().y));
+					//接触部から火花を生成
+					spark.Add(Vec2(Random(moveBlock.position().x, bar.target().x), bar.target().y));
 
 					//キーを押してリセット
 					if (Input::AnyKeyClicked())
@@ -465,16 +474,14 @@ void Main()
 				//一度当たった
 				isHit = true;
 
-				//カッターの先端から火花を10個生成
-				for (int i = 0; i < 10; ++i)
-				{
-					spark.Add(cutter.position() + cutter.size());
-					spark.Add(cutter.position_Mirror() + cutter.size());
-				}
+				//カッターの先端から火花を生成
+				spark.Add(cutter.position() + cutter.size());
+				spark.Add(cutter.position_Mirror() + cutter.size());
 			}
-			//一度当たっていて外れた場合は、切断が完了したので移動開始
+			//一度当たっていて外れた場合
 			else if (isHit)
 			{
+				//切断が完了したので移動開始
 				moveBlock.Start(
 					blick.SetDivision(cutter.position().x, cutter.length())
 					, Vec2(cutter.position().x, blick.position().y)
