@@ -24,10 +24,7 @@
 Window::Resize(★, 480);
 ★の部分のみ変更可能です。画面幅が広がります。
 
-![スクリーンショット](https://github.com/Rinifisu/Siv3D-Game-Jam/12/Screenshot/1.png "スクリーンショット")
-
-![スクリーンショット](https://github.com/Rinifisu/Siv3D-Game-Jam/12/Screenshot/2.png "スクリーンショット")
-
-![スクリーンショット](https://github.com/Rinifisu/Siv3D-Game-Jam/12/Screenshot/3.png "スクリーンショット")
-
-![スクリーンショット](https://github.com/Rinifisu/Siv3D-Game-Jam/12/Screenshot/4.png "スクリーンショット")
+![スクリーンショット](https://raw.githubusercontent.com/Rinifisu/Siv3D-Game-Jam/master/12/Screenshot/1.png "スクリーンショット")
+![スクリーンショット](https://raw.githubusercontent.com/Rinifisu/Siv3D-Game-Jam/master/12/Screenshot/2.png "スクリーンショット")
+![スクリーンショット](https://raw.githubusercontent.com/Rinifisu/Siv3D-Game-Jam/master/12/Screenshot/3.png "スクリーンショット")
+![スクリーンショット](https://raw.githubusercontent.com/Rinifisu/Siv3D-Game-Jam/master/12/Screenshot/4.png "スクリーンショット")
