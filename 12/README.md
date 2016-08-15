@@ -37,6 +37,9 @@ Window::Resize(★, 480);
 
 切断したブロックは画面下にストックされ、画面サイズを上回る大きさになるとゲームオーバーになります。
 
+##実行ファイル
+https://raw.githubusercontent.com/Rinifisu/Siv3D-Game-Jam/master/12/%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%82%92%E7%94%9F%E3%81%BF%E5%87%BA%E3%81%97%E3%81%9F%E3%82%89%E8%B2%A0%E3%81%91.zip
+
 
 ![スクリーンショット](https://raw.githubusercontent.com/Rinifisu/Siv3D-Game-Jam/master/12/Screenshot/1.png "スクリーンショット")
 ![スクリーンショット](https://raw.githubusercontent.com/Rinifisu/Siv3D-Game-Jam/master/12/Screenshot/2.png "スクリーンショット")
